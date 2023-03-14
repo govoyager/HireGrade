@@ -167,8 +167,6 @@ button.btn[name="uploadbutton"]:focus {
 }
 
 
-
-
 @media (max-width: 1000px) {
   .content {
     display: none;
@@ -177,15 +175,12 @@ button.btn[name="uploadbutton"]:focus {
     display: none;
   }
 }
-
 @media only screen and (max-width: 1000px) {
-    .brand-logo {
-      position: absolute;
-      top:10%;
-      left: 40%;
-      transform: translate(-50%, -50%);
-    }
+  .brand-logo {
+    visibility: hidden;
   }
+}
+
 
 
 @media only screen and (max-width: 1000px) {
@@ -194,11 +189,25 @@ button.btn[name="uploadbutton"]:focus {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      height: 80vh;
-      width: 80vw;
     }
   }
 
+@media only screen and (min-width: 1000px) {
+  .new-text {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .new-text {
+    display: block;
+    color: #3DF3D2;
+    text-decoration: solid;
+    font-size: 16px;
+    text-align: center;
+  }
+}
 
 </style>
 </head>
@@ -210,6 +219,7 @@ button.btn[name="uploadbutton"]:focus {
       <div class="row">
         <div class="col s12">
           <a href="#" class="brand-logo" target="_blank", style="color:#3DF3D2;font-weight: bold; ">HireGrade</a>
+          <span class="new-text">HireGrade</span>
           <ul class="right hide-on-med-and-down" style="font-weight: bold;">
             <li><a href="#" target="_blank">Features</a></li>
             <li><a href="#" target="_blank">Services</a></li>
