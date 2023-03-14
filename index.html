@@ -87,19 +87,6 @@ body {
   flex-direction: column;
   border: 0.5vw solid #313554; /* use vw unit for border width */
 
-  /* On small screens, move the center element to the center */
-  @media (max-width: 767px) {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  /* On medium-sized screens, move the center element to the center */
-  @media (min-width: 768px) and (max-width: 1023px) {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
 }
 
 
@@ -180,11 +167,6 @@ button.btn[name="uploadbutton"]:focus {
 }
 
 
-.brand-logo {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-}
 
 
 @media (max-width: 1000px) {
@@ -194,20 +176,26 @@ button.btn[name="uploadbutton"]:focus {
   .square-1, .rectangle{
     display: none;
   }
-
 }
 
-@media only screen and (max-width: 600px) {
-  .frame {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media only screen and (max-width: 1000px) {
+    .brand-logo {
+      position: absolute;
+      top:10%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+    }
   }
-  
-  .center {
-    text-align: center;
+
+
+@media only screen and (max-width: 1000px) {
+    .frame {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
-}
 
 
 </style>
@@ -219,7 +207,7 @@ button.btn[name="uploadbutton"]:focus {
     <div class="nav-wrapper">
       <div class="row">
         <div class="col s12">
-          <a href="#" class="brand-logo" target="_blank", style="color:#3DF3D2;font-weight: bold;">HireGrade</a>
+          <a href="#" class="brand-logo" target="_blank", style="color:#3DF3D2;font-weight: bold; ">HireGrade</a>
           <ul class="right hide-on-med-and-down" style="font-weight: bold;">
             <li><a href="#" target="_blank">Features</a></li>
             <li><a href="#" target="_blank">Services</a></li>
@@ -251,10 +239,8 @@ button.btn[name="uploadbutton"]:focus {
 			<input type="file" class="upload-input" />
 		</div>
 
-		<button type="button" class="btn" name="uploadbutton">Upload your Resume</button>
-		<p>or drop a file</p>
-		
-        
+		<button type="button" class="btn" name="uploadbutton">Upload</button>
+		<p>or drop a file</p>   
 	</div>  
 </div>
 
