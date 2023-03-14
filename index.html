@@ -38,13 +38,6 @@ body {
   margin-left: 10vh; /* add this */
 }
 
-.square {
-  height: 8vh;
-  width: 5vw;
-  background-color: #3DF3D2;
-  position: fixed;
-}
-
 .square-1 {
   height: 20vh; /* 20% of the viewport height */
   width: 20vh; /* 20% of the viewport height */
@@ -63,16 +56,18 @@ body {
   left: 9.25vw; /* 15% of the viewport width from the left */
 }
 
-
 .content {
     color: white;
-    position: relative;
-    top: 35vh;
-    left: 9vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%, -50%);
     font-size: 1.5rem;
     padding: 1rem;
-
+    width: 900px; /* or any other desired width */
+    height: 250px; /* or any other desired height */
 }
+
 
 
 
@@ -91,7 +86,22 @@ body {
   justify-content: space-evenly;
   flex-direction: column;
   border: 0.5vw solid #313554; /* use vw unit for border width */
+
+  /* On small screens, move the center element to the center */
+  @media (max-width: 767px) {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* On medium-sized screens, move the center element to the center */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
+
 
 p{
     font-size: 1.5vw; /* 1.5% of the viewport width */
@@ -124,19 +134,51 @@ p{
   opacity: 0;
 }
 
-.btn {
-  display: block;
-  width: 24vw;
-  height: 4vw;
-  background: #3DF3D2;
-  color: #161828;
-  border-radius: 0.2vw;
-  border: 0;
-  box-shadow: 0 0.3vw 0 0 #3DF3D2; /* use vw unit for box-shadow */
-  transition: all 0.3s ease-in-out;
-  font-size: 1vw; /* 1% of the viewport width */
-  margin-bottom: 2vw;
+/* Default button styles */
+button.btn[name="uploadbutton"] {
+  background-color: #3DF3D2;
+  border-color: #313554;
+  color: #313554;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
 }
+
+button.btn[name="uploadbutton"]:hover {
+  background-color: #3DF3D2;
+  border-color: #313554;
+}
+
+button.btn[name="uploadbutton"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Styles for small screens */
+@media screen and (max-width: 576px) {
+  button.btn[name="uploadbutton"] {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+/* Styles for medium screens */
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  button.btn[name="uploadbutton"] {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+/* Styles for large screens */
+@media screen and (min-width: 768px) {
+  button.btn[name="uploadbutton"] {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+}
+
 
 .brand-logo {
     display: block;
@@ -144,16 +186,29 @@ p{
     text-align: center;
 }
 
-.content {
-    display: block;
-    margin: 0 auto;
-}
 
 @media (max-width: 1000px) {
   .content {
     display: none;
   }
+  .square-1, .rectangle{
+    display: none;
+  }
+
 }
+
+@media only screen and (max-width: 600px) {
+  .frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .center {
+    text-align: center;
+  }
+}
+
 
 </style>
 </head>
@@ -165,7 +220,7 @@ p{
       <div class="row">
         <div class="col s12">
           <a href="#" class="brand-logo" target="_blank", style="color:#3DF3D2;font-weight: bold;">HireGrade</a>
-          <ul class="right hide-on-med-and-down">
+          <ul class="right hide-on-med-and-down" style="font-weight: bold;">
             <li><a href="#" target="_blank">Features</a></li>
             <li><a href="#" target="_blank">Services</a></li>
             <li><a href="#" target="_blank">how it Works?</a></li>
@@ -183,7 +238,6 @@ p{
   </nav>
 </div>
 
-<div class="square"></div>
 <div class = "content">
     <h1>Upload your Resume <br> Check your eligibility.</h1>
 </div>
