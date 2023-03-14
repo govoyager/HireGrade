@@ -25,7 +25,9 @@ body {
 .navbar-fixed {
   position: absolute;
   z-index: 999999999;
-  color: #3DF3D2; /* add this */
+  color: #3DF3D2;
+  font-size: 1.5vw; /* 1.5% of the viewport width */
+  padding: 1vh 0.5vw; /* 1% of the viewport height top and bottom, 2% of the viewport width left and right */
 }
 
 .nav-wrapper ul li a {
@@ -33,38 +35,46 @@ body {
 }
 
 .nav-wrapper .brand-logo {
-  margin-left: 70px; /* add this */
+  margin-left: 10vh; /* add this */
 }
 
 .square {
-  height: 50px;
-  width: 50px;
+  height: 8vh;
+  width: 5vw;
   background-color: #3DF3D2;
+  position: fixed;
 }
 
 .square-1 {
-  height: 150px;
-  width: 150px;
+  height: 20vh; /* 20% of the viewport height */
+  width: 20vh; /* 20% of the viewport height */
   background-color: #3DF3D2;
   position: fixed;
   bottom: 0;
-  left:0;
+  left: 0;
 }
+
 .rectangle{
-  height: 50px;
-  width: 100px;
+  height: 5vh; /* 5% of the viewport height */
+  width: 5vw; /* 10% of the viewport width */
   background-color: #3DF3D2;
   position: fixed;
-  bottom: 150px;
-  left: 150px;
+  bottom: 20vh; /* 15% of the viewport height from the bottom */
+  left: 9.25vw; /* 15% of the viewport width from the left */
 }
+
 
 .content {
     color: white;
-    position: absolute;
-    top: 35%;
-    left: 10%;
+    position: relative;
+    top: 35vh;
+    left: 9vw;
+    font-size: 1.5rem;
+    padding: 1rem;
+
 }
+
+
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
 .center {
@@ -72,40 +82,42 @@ body {
   top: 50%;
   left: 70%;
   transform: translate(-50%, -50%);
-  width: 500px;
-  height: 400px;
-  border-radius: 10px ;
+  width: 40vw;
+  height: 30vw;
+  border-radius: 1vw;
   background: #161828;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  border: 5px solid #313554; /* add border property with desired style and color */
+  border: 0.5vw solid #313554; /* use vw unit for border width */
 }
 
 p{
-    size: 10px;
-    color: #FFFFFF; 
+    font-size: 1.5vw; /* 1.5% of the viewport width */
+    color: #FFFFFF;
     opacity: 55%;
     text-align: center;
-
+    margin: 0;
+    padding: 1vw; /* 1% of the viewport width */
 }
 
 .dropzone {
-  width: 100px;
-  height: 80px;
-  border-radius: 5px;
+  width: 10vw;
+  height: 8vw;
+  border-radius: 0.5vw;
   text-align: center;
+  margin: 2vw;
 }
 
 .upload-icon {
-  margin: 25px 2px 2px 2px;
-  height: 100px;
+  margin: 2.5vw 0.5vw 0.5vw 0.5vw;
+  height: 10vw;
 }
 
 .upload-input {
   position: relative;
-  top: -62px;
+  top: -6.2vw;
   left: 0;
   width: 100%;
   height: 100%;
@@ -114,15 +126,33 @@ p{
 
 .btn {
   display: block;
-  width: 240px;
-  height: 40px;
+  width: 24vw;
+  height: 4vw;
   background: #3DF3D2;
   color: #161828;
-  border-radius: 2px;
+  border-radius: 0.2vw;
   border: 0;
-  box-shadow: 0 3px 0 0 #3DF3D2;
+  box-shadow: 0 0.3vw 0 0 #3DF3D2; /* use vw unit for box-shadow */
   transition: all 0.3s ease-in-out;
-  font-size: 14px;
+  font-size: 1vw; /* 1% of the viewport width */
+  margin-bottom: 2vw;
+}
+
+.brand-logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content {
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+  .content {
+    display: none;
+  }
 }
 
 </style>
@@ -134,7 +164,7 @@ p{
     <div class="nav-wrapper">
       <div class="row">
         <div class="col s12">
-          <a href="#" class="brand-logo" target="_blank", style="color:#3DF3D2">HireGrade</a>
+          <a href="#" class="brand-logo" target="_blank", style="color:#3DF3D2;font-weight: bold;">HireGrade</a>
           <ul class="right hide-on-med-and-down">
             <li><a href="#" target="_blank">Features</a></li>
             <li><a href="#" target="_blank">Services</a></li>
